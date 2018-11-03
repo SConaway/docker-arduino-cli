@@ -1,0 +1,20 @@
+#! /usr/bin/env bash
+# shellcheck disable=SC2164
+
+apt update
+apt install -y \
+  wget \
+  jq \
+
+
+LATEST_VERSION=$(wget -qO- "https://api.github.com/repos/arduino/arduino-cli/tags" | jq -r '.[0].name')
+CLI_URL="https://github.com/arduino/arduino-cli/releases/download/$LATEST_VERSION/arduino-cli-$LATEST_VERSION-linux64.tar.bz2"
+
+wget -qO- $CLI_URL | tar xvj
+
+ln arduino-cli-$LATEST_VERSION-linux64 /usr/local/bin/arduino-cli
+
+arduino-cli version
+
+apt-get clean
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
