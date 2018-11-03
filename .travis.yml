@@ -5,7 +5,9 @@ language: generic
 services:
   - docker
 
-before_script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+before_script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker pull ubuntu
 
 script:
   - docker build -t sconaway/docker-arduino-cli .
