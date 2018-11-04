@@ -5,6 +5,7 @@ apt update
 apt install -y \
   wget \
   jq \
+  make \
 
 
 LATEST_VERSION=$(wget -qO- "https://api.github.com/repos/arduino/arduino-cli/tags" | jq -r '.[0].name')
