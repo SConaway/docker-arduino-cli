@@ -10,8 +10,8 @@ before_script:
   - docker pull ubuntu
 
 script:
-  - docker build -t sconaway/docker-arduino-cli ./Dockerfile
-  - docker build ./Dockerfile-test
+  - docker build -t sconaway/docker-arduino-cli -f ./Dockerfile . 
+  - docker build -f ./Dockerfile-test .
 
 after_success:
   - docker push sconaway/docker-arduino-cli
