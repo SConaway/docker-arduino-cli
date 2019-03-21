@@ -10,7 +10,7 @@ apt install -y \
   make \
 
 
-LATEST_VERSION="0.3.3-alpha.preview" #$(wget -qO- "https://api.github.com/repos/arduino/arduino-cli/tags" | jq -r '.[0].name')
+LATEST_VERSION=$(wget -qO- "https://api.github.com/repos/arduino/arduino-cli/tags" | jq -r '.[0].name')
 CLI_URL="https://github.com/arduino/arduino-cli/releases/download/$LATEST_VERSION/arduino-cli-$LATEST_VERSION-linux64.tar.bz2"
 
 wget -qO- $CLI_URL | tar xvj
