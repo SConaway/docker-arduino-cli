@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 # shellcheck disable=SC2164
 
+set -ex
+
 apt update
 apt install -y \
   wget \
