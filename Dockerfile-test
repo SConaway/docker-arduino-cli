@@ -1,0 +1,7 @@
+FROM sconaway/docker-arduino-cli
+
+RUN \
+  arduino-cli core update-index && \
+  arduino-cli core install arduino:avr && \
+  arduino-cli lib update-index && \
+  arduino-cli lib install "Adafruit SleepyDog Library"

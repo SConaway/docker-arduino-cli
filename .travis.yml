@@ -1,6 +1,6 @@
 sudo: required
 
-language: generic
+language: minimal
 
 services:
   - docker
@@ -10,5 +10,8 @@ before_script:
   - docker pull ubuntu
 
 script:
-  - docker build -t sconaway/docker-arduino-cli .
+  - docker build -t sconaway/docker-arduino-cli ./Dockerfile
+  - docker build ./Dockerfile-test
+
+after_success:
   - docker push sconaway/docker-arduino-cli
