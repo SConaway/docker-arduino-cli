@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+set -ex
+
+arduino-cli core update-index
+arduino-cli core install arduino:avr
+arduino-cli lib update-index
+arduino-cli lib install "Adafruit SleepyDog Library"
+
+cd /sketches
+
+for D in *; do
+    if [ -d "${D}" ]; then
+        arduino-cli compile --fqbn "arduino:avr:uno" "${D}"
+    fi
+done
