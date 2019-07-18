@@ -14,7 +14,7 @@ ln arduino-cli-*-linux64 /usr/local/bin/arduino-cli
 
 arduino-cli version
 
-apt purge \
+apt purge -y \
   wget
 
 apt autoremove -y 
