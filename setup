@@ -10,7 +10,7 @@ CLI_URL="https://downloads.arduino.cc/arduino-cli/arduino-cli-latest-linux64.tar
 
 wget -qO- $CLI_URL | tar xvj
 
-ln arduino-cli-*-linux64 /usr/local/bin/arduino-cli
+ln arduino-cli /usr/local/bin/arduino-cli
 
 arduino-cli version
 
