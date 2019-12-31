@@ -8,10 +8,6 @@ apt install -y \
 
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh
 
-mkdir -p /root/.arduino15/packages
-mkdir -p /root/.arduino15/staging
-mkdir -p /root/.arduino15/tmp
-
 arduino-cli version
 
 apt purge -y \
